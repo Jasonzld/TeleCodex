@@ -30,6 +30,11 @@ class Settings(BaseSettings):
     codex_max_output_chars: int = 12000
     codex_concurrency_per_user: int = 1
     codex_global_concurrency: int = 4
+    codex_model: str = ""  # e.g. "o3", "gpt-4o-mini" — empty = codex default
+    codex_full_auto: bool = True  # --full-auto (yolo mode)
+
+    # Direct chat: if True, any text without / prefix is treated as /ask
+    direct_chat: bool = True
 
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 
