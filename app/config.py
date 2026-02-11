@@ -21,6 +21,9 @@ class Settings(BaseSettings):
     redis_url: str = "redis://localhost:6379/0"
     queue_name: str = "telecodex"
 
+    # Mode: "polling" for local dev (no public URL needed), "webhook" for production
+    mode: str = "polling"
+
     # Codex
     codex_bin: str = "codex"
     codex_timeout_sec: int = 90
